@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream font-body text-ink antialiased;
+  }
+  * {
+    @apply box-border;
+  }
+}
+
+@layer components {
+  /* Primary action button */
+  .btn {
+    @apply bg-ink px-5 py-2 text-xs font-bold uppercase tracking-widest text-cream transition-colors duration-200 hover:bg-crimson;
+  }
+
+  /* Underline input */
+  .input {
+    @apply w-full border-b border-ink/25 bg-transparent py-2.5 text-sm outline-none transition-colors duration-200
+           placeholder:text-ink/35 focus:border-crimson;
+  }
+
+  /* Display / title font */
+  .title {
+    @apply font-display uppercase tracking-wide;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Clamp helpers */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
